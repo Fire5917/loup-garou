@@ -2,8 +2,49 @@
 import time
 import colorama
 import random
+colorama.init()
+def lines(x):
+    print(colorama.Fore.YELLOW + "=========================" + colorama.Fore.WHITE)
 joueurs = []
 loups = []
+regle = input("Voulez vous savoir les règles? (y/n) >>> ")
+if regle == "y":
+    print(colorama.Fore.GREEN + """
+________                ______              
+___  __ \_____ _______ ____  /_____ ________
+__  /_/ /_  _ \__  __ `/__  / _  _ \__  ___/
+_  _, _/ /  __/_  /_/ / _  /  /  __/_(__  ) 
+/_/ |_|  \___/ _\__, /  /_/   \___/ /____/  
+               /____/                           
+    """)
+    print(colorama.Fore.CYAN + "Voci les différents rôles : ")
+    time.sleep(1.0)
+    lines(1)
+    print(colorama.Fore.LIGHTBLUE_EX + "Le villageoi : ")
+    print(colorama.Fore.BLUE + "Son objectif est d'éliminer tous les Loups-Garous. Il ne dispose d'aucun pouvoir particulier : uniquement sa perspicacité et sa force de persuasion.")
+    lines(1)
+    input("appuyez sur entrée pour continuer")
+    lines(1)
+    print(colorama.Fore.RED + "Le loup garou : ")
+    print(colorama.Fore.BLUE + "Son objectif est d'éliminer tous les innocents (ceux qui ne sont pas Loups-Garous). Chaque nuit, il se réunit avec ses compères Loups pour décider d'une victime à éliminer...")
+    lines(1)
+    input("appuyez sur entrée pour continuer")
+    lines(1)
+    print(colorama.Fore.LIGHTRED_EX + "La sorcière : ")
+    print(colorama.Fore.BLUE + "Son objectif est d'éliminer tous les Loups-Garous. Elle dispose de deux potions : une potion de vie pour sauver la victime des Loups, et une potion de mort pour assassiner quelqu'un.")
+    lines(1)
+    input("appuyez sur entrée pour continuer")
+    lines(1)
+    print(colorama.Fore.MAGENTA + "Cupidon : ")
+    print(colorama.Fore.BLUE + "Son objectif est d'éliminer tous les Loups-Garous. Dès le début de la partie, il doit former un couple de deux joueurs. Leur objectif sera de survivre ensemble, car si l'un d'eux meurt, l'autre se suicidera.")
+    lines(1)
+    input("appuyez sur entrée pour continuer")
+    lines(1)
+    print(colorama.Fore.GREEN + "Le chasseur :")
+    print(colorama.Fore.BLUE + "Son objectif est d'éliminer tous les Loups-Garous. A sa mort, il doit éliminer un joueur en utilisant sa dernière balle...")
+    lines(1)
+
+
 nbr_de_joueurs = int(input("Combien de joueurs vont jouer? (min 6) >>>"))
 if nbr_de_joueurs < 6:
     print("pas assez de joueurs...")
@@ -14,7 +55,6 @@ for i in range(nbr_de_joueurs):
         print(joueur)
     nom_du_joueur = input("Quel est le nom du joueur? >>>")
     joueurs.append(nom_du_joueur)
-colorama.init()
 print(colorama.Fore.BLUE + "Joueurs inscrits :" + colorama.Fore.GREEN)
 joueurs_en_vie = joueurs.copy()
 nbr_de_loups = nbr_de_joueurs / 4
