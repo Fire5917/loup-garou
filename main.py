@@ -4,8 +4,8 @@ import colorama
 import random
 joueurs = []
 loups = []
-nbr_de_joueurs = int(input("Combien de joueurs vont jouer? (min 4) >>>"))
-if nbr_de_joueurs < 4:
+nbr_de_joueurs = int(input("Combien de joueurs vont jouer? (min 6) >>>"))
+if nbr_de_joueurs < 6:
     print("pas assez de joueurs...")
     input("Appuyez sur entrée pour quitter")
     exit()
