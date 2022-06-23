@@ -1,4 +1,4 @@
-#By Fire5917 & Frigogel
+#By Fire5917
 import time
 import colorama
 import random
@@ -20,7 +20,7 @@ _  _, _/ /  __/_  /_/ / _  /  /  __/_(__  )
     print(colorama.Fore.CYAN + "Voci les différents rôles : ")
     time.sleep(1.0)
     lines(1)
-    print(colorama.Fore.LIGHTBLUE_EX + "Le villageoi : ")
+    print(colorama.Fore.LIGHTBLUE_EX + "Le villageois : ")
     print(colorama.Fore.BLUE + "Son objectif est d'éliminer tous les Loups-Garous. Il ne dispose d'aucun pouvoir particulier : uniquement sa perspicacité et sa force de persuasion.")
     lines(1)
     input("appuyez sur entrée pour continuer")
@@ -44,12 +44,16 @@ _  _, _/ /  __/_  /_/ / _  /  /  __/_(__  )
     print(colorama.Fore.BLUE + "Son objectif est d'éliminer tous les Loups-Garous. A sa mort, il doit éliminer un joueur en utilisant sa dernière balle...")
     lines(1)
 
-
-nbr_de_joueurs = int(input("Combien de joueurs vont jouer? (min 6) >>>"))
+try:
+    nbr_de_joueurs = int(input("Combien de joueurs vont jouer? (min 6) >>>"))
+except ValueError:
+    print(colorama.Fore.RED + "[!] Veuillez mettre un chiffre !")
+    nbr_de_joueurs = int(input("Combien de joueurs vont jouer? (min 6) >>>"))
 if nbr_de_joueurs < 6:
     print("pas assez de joueurs...")
     input("Appuyez sur entrée pour quitter")
     exit()
+
 for i in range(nbr_de_joueurs):
     for joueur in joueurs:
         print(joueur)
