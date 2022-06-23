@@ -1,4 +1,4 @@
-#By Fire5917
+#By Fire5917 & Frigogel
 import time
 import colorama
 import random
